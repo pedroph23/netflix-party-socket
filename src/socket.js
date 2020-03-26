@@ -1,6 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var port = process.env.PORT || 8080;
 
 var clients = {};
 
@@ -10,7 +11,7 @@ res.send('server is running');
 
 //SocketIO vem aqui
 
-http.listen(8080, function(){
+http.listen(port, function(){
     io.on("connection", function (client) {
         console.log("Connected");
         client.on("join", function(name){
