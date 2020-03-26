@@ -10,7 +10,7 @@ res.send('server is running');
 
 //SocketIO vem aqui
 
-http.listen(443, function(){
+http.listen(8080, function(){
     io.on("connection", function (client) {
         console.log("Connected");
         client.on("join", function(name){
